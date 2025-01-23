@@ -25,4 +25,4 @@ contract BallotTest {
     function checkWinninProposalWithReturnValue () public view returns (bool) {
         return ballotToTest.winningProposal() == 0;
     }
-}
+}  
