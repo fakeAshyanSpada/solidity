@@ -212,6 +212,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "getShares",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "hashA",
 				"outputs": [
 					{
@@ -397,11 +410,11 @@
 	},
 	"sources": {
 		"contracts/8_SimpleAMM.sol": {
-			"keccak256": "0xbae0ab2396e0b5c4d357cae5252cb166f31cd92bb9ec489f5df3d9e1a3d609a8",
+			"keccak256": "0x494299c6adb593775d3c3565623fc9a7939789b4caf0318b1a0705fb88dda4ba",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8a1a20d3887ce22e05a3a6d4b2cff9356e06f3fbcfb70078c229c8cddfc35e25",
-				"dweb:/ipfs/QmYKnwsAng7MKDb8frBGYouAWo4vDyfaHbAkNLmbqFz7iR"
+				"bzz-raw://95184818cf7c4e0aafd109dff6e3977a459aca99985de63b7e88a07b6152b4d2",
+				"dweb:/ipfs/QmSpJbxa6srZy6ykhcVBUsFj1dFGVZiG5zWiJTovc93N3V"
 			]
 		}
 	},

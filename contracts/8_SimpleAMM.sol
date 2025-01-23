@@ -115,6 +115,10 @@ contract SimpleAMM {
 
     }
 
+    function getShares() public view returns (uint256) {
+        return liquidityShares[msg.sender];
+    }
+
     function getPrice() public view returns (uint256) {
         return reserveA / reserveB;
     }
@@ -126,6 +130,7 @@ contract SimpleAMM {
     // 辅助函数：求平方根
     function sqrt(uint256 x) internal pure returns (uint256 y) {
         uint256 z = (x + 1) / 2;
+        y = x;
         while (z < y) {
             y = z;
             z = (x / z + z) / 2;
