@@ -26,10 +26,77 @@
 						"internalType": "uint256",
 						"name": "_reserveB",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_feeRate",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountA",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountB",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountShares",
+						"type": "uint256"
+					}
+				],
+				"name": "AddLiquidity",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountA",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountB",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountShares",
+						"type": "uint256"
+					}
+				],
+				"name": "RemoveLiquidity",
+				"type": "event"
 			},
 			{
 				"anonymous": false,
@@ -61,6 +128,43 @@
 				],
 				"name": "Swap",
 				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "FEE_RATE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountB",
+						"type": "uint256"
+					}
+				],
+				"name": "addLiquidity",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -133,6 +237,49 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "liquidityShares",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"name": "removeLiquidity",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountB",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "reserveA",
 				"outputs": [
@@ -181,6 +328,45 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenA",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenB",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalLiquidityShares",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -211,11 +397,11 @@
 	},
 	"sources": {
 		"contracts/8_SimpleAMM.sol": {
-			"keccak256": "0xbffbcd5856893e43a10751750d5144f32d36b47dc8bfc728193e3f9c83574121",
+			"keccak256": "0xbae0ab2396e0b5c4d357cae5252cb166f31cd92bb9ec489f5df3d9e1a3d609a8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://38541c8bedb50a1e5f0937bd8856b26e264f6551b63a13c4735dde59c9b03fb1",
-				"dweb:/ipfs/Qmc57resrkw7zT35rPLEd648pgz4LVzFA36KZbRhu6NjaY"
+				"bzz-raw://8a1a20d3887ce22e05a3a6d4b2cff9356e06f3fbcfb70078c229c8cddfc35e25",
+				"dweb:/ipfs/QmYKnwsAng7MKDb8frBGYouAWo4vDyfaHbAkNLmbqFz7iR"
 			]
 		}
 	},
