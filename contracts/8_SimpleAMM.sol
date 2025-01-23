@@ -5,24 +5,25 @@ contract SimpleAMM {
     uint256 public reserveA;
     uint256 public reserveB;
     uint256 public constantProduct;
-    bytes32  public tokenA;
-    bytes32  public tokenB;
+    bytes32  public hashA;
+    bytes32  public hashB;
 
     event Swap(address indexed user, string inputToken, uint256 amountIn, uint256 amountOut);
 
-    constructor(bytes32  _tokenA, bytes32 _tokenB, uint256  _reserveA, uint256  _reserveB) {
+    constructor(string memory  _tokenA, string memory _tokenB, uint256  _reserveA, uint256  _reserveB) {
         require(_reserveA > 0 && _reserveB > 0, "invalid reserves");
-        tokenA = _tokenA;
-        tokenB = _tokenB;
+        hashA = keccak256(abi.encodePacked(_tokenA));
+        hashB = keccak256(abi.encodePacked(_tokenB));
         reserveA = _reserveA;
         reserveB = _reserveB;
         constantProduct = _reserveA * _reserveB;
     }
 
-    function swap(uint256 amountIn, bytes32  inputToken)  public returns (uint256 amountOut) {
+    function swap(uint256 amountIn, string memory inputToken)  public returns (uint256 amountOut) {
         require(amountIn > 0, "Amount must be greater than 0");
-        require(inputToken == tokenA || inputToken == tokenB, "Invalid token");
-        if (inputToken == tokenA) {
+        bytes32 tokenHash = keccak256(abi.encodePacked(inputToken));
+        require(tokenHash == hashA || tokenHash == hashB, "Invalid token");
+        if (tokenHash == hashA) {
             uint256 newReserveA = reserveA + amountIn;
             uint256 newReserveB = constantProduct / newReserveA;
             amountOut = reserveB - newReserveB;

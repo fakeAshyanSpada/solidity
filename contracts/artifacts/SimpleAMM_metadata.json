@@ -8,14 +8,14 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes32",
+						"internalType": "string",
 						"name": "_tokenA",
-						"type": "bytes32"
+						"type": "string"
 					},
 					{
-						"internalType": "bytes32",
+						"internalType": "string",
 						"name": "_tokenB",
-						"type": "bytes32"
+						"type": "string"
 					},
 					{
 						"internalType": "uint256",
@@ -108,6 +108,32 @@
 			},
 			{
 				"inputs": [],
+				"name": "hashA",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "hashB",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "reserveA",
 				"outputs": [
 					{
@@ -140,9 +166,9 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "bytes32",
+						"internalType": "string",
 						"name": "inputToken",
-						"type": "bytes32"
+						"type": "string"
 					}
 				],
 				"name": "swap",
@@ -154,32 +180,6 @@
 					}
 				],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "tokenA",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "tokenB",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -211,11 +211,11 @@
 	},
 	"sources": {
 		"contracts/8_SimpleAMM.sol": {
-			"keccak256": "0x3cde3b5138c5ead5724972f909de5be39072d80164d7fb39c1354ff4d2a0248b",
+			"keccak256": "0xbffbcd5856893e43a10751750d5144f32d36b47dc8bfc728193e3f9c83574121",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6e1501ddab43ec3a2f8d1d96d57f924295deb5a19fe8e43e48757714f45bf54f",
-				"dweb:/ipfs/Qmbs9n9jszF6dmEXBSHB8ZQRA99tFq7NqVemCEBBkQdkpw"
+				"bzz-raw://38541c8bedb50a1e5f0937bd8856b26e264f6551b63a13c4735dde59c9b03fb1",
+				"dweb:/ipfs/Qmc57resrkw7zT35rPLEd648pgz4LVzFA36KZbRhu6NjaY"
 			]
 		}
 	},
